@@ -1,4 +1,6 @@
 *
 !.gitignore
-!docs/
-!docs/*
+!zig-out
+zig-out/*
+!zig-out/docs
+!zig-out/docs/*
