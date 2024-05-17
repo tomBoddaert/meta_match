@@ -20,7 +20,7 @@ const VectorMatch = @import("VectorMatch.zig");
 
 /// Match a type.
 ///
-/// https://ziglang.org/documentation/master/std/#A;std:builtin.Type
+/// https://ziglang.org/documentation/master/std/#std.builtin.Type
 pub const TypeMatch = union(enum) {
     any: void,
     by_type: type,
@@ -102,7 +102,7 @@ pub const TypeMatch = union(enum) {
                 else => false,
             },
             .ErrorSet => |error_set| switch (t) {
-                .ErrorSet => |error_set_type| error_set.match_type_info(T, error_set_type),
+                .ErrorSet => |error_set_type| error_set.match_info(error_set_type),
                 else => false,
             },
             .Enum => |enum_| switch (t) {
@@ -212,7 +212,7 @@ test "meta_match.TypeMatch" {
     try testing.expect(tm_error_union.match(error{}!u8));
 
     const tm_error_set = TypeMatch{
-        .ErrorSet = &ErrorSetMatch.Any,
+        .ErrorSet = &ErrorSetMatch{ .any = {} },
     };
     try testing.expect(tm_error_set.match(error{}));
 

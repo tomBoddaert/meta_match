@@ -1,6 +1,6 @@
 //! Match an `ErrorUnion` type.
 //!
-//! https://ziglang.org/documentation/master/std/#A;std:builtin.Type.ErrorUnion
+//! https://ziglang.org/documentation/master/std/#std.builtin.Type.ErrorUnion
 
 const std = @import("std");
 const ErrorUnion = std.builtin.Type.ErrorUnion;

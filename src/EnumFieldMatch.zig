@@ -1,6 +1,6 @@
 //! Match an field from an `Enum` type.
 //!
-//! https://ziglang.org/documentation/master/std/#A;std:builtin.Type.EnumField
+//! https://ziglang.org/documentation/master/std/#std.builtin.Type.EnumField
 
 const std = @import("std");
 const EnumField = std.builtin.Type.EnumField;

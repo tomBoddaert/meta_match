@@ -1,6 +1,6 @@
 //! Match a `Vector` type.
 //!
-//! https://ziglang.org/documentation/master/std/#A;std:builtin.Type.Vector
+//! https://ziglang.org/documentation/master/std/#std.builtin.Type.Vector
 
 const std = @import("std");
 const Vector = std.builtin.Type.Vector;

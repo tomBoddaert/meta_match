@@ -1,4 +1,3 @@
-//!zig-autodoc-guide: ../README.md
 //! This project assumes that all type infos passed into functions
 //! were created by `@typeInfo`.
 

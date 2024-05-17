@@ -1,6 +1,6 @@
 //! Match a declaration from a container.
 //!
-//! https://ziglang.org/documentation/master/std/#A;std:builtin.Type.Declaration
+//! https://ziglang.org/documentation/master/std/#std.builtin.Type.Declaration
 
 const std = @import("std");
 const Declaration = std.builtin.Type.Declaration;

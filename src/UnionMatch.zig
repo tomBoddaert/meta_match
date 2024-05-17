@@ -1,6 +1,6 @@
 //! Match a `Union` type.
 //!
-//! https://ziglang.org/documentation/master/std/#A;std:builtin.Type.Union
+//! https://ziglang.org/documentation/master/std/#std.builtin.Type.Union
 
 const std = @import("std");
 const Type = std.builtin.Type;
@@ -76,7 +76,7 @@ test "meta_match.UnionMatch" {
     try testing.expect(!um_tagged.match(Magnitude));
 
     const sm_packed_layout = Self{
-        .layout = .{ .options = &.{.Packed} },
+        .layout = .{ .options = &.{.@"packed"} },
     };
     try testing.expect(sm_packed_layout.match(PackedMagnitude));
     try testing.expect(!sm_packed_layout.match(Magnitude));

@@ -7,23 +7,22 @@ const match_error = @import("utils.zig").match_error;
 
 /// Match an `ErrorSet` type.
 ///
-/// https://ziglang.org/documentation/master/std/#A;std:builtin.Type.ErrorSet
+/// https://ziglang.org/documentation/master/std/#std.builtin.Type.ErrorSet
 pub const ErrorSetMatch = union(enum) {
-    by_type: TypeMatch,
     by_errors: struct {
         errors: []const Type.Error = &.{},
         exclusive: bool = false,
+        allow_global: bool = false,
     },
-    null: void,
+    global: void,
+    any: void,
 
     const Self = @This();
-    pub const Any = Self{ .by_errors = .{} };
 
-    pub fn match_type_info(comptime self: Self, comptime T: type, comptime t: ErrorSet) bool {
+    pub fn match_info(comptime self: Self, comptime t: ErrorSet) bool {
         return switch (self) {
-            .by_type => |type_| type_.match_with(T, t),
             .by_errors => |errors| {
-                const t_errors = t orelse return false;
+                const t_errors = t orelse return errors.allow_global;
 
                 if (errors.exclusive and t_errors.len != errors.errors.len)
                     return false;
@@ -36,13 +35,14 @@ pub const ErrorSetMatch = union(enum) {
 
                 return true;
             },
-            .null => t == null,
+            .global => t == null,
+            .any => true,
         };
     }
 
     pub fn match(comptime self: Self, comptime T: type) bool {
         return switch (@typeInfo(T)) {
-            .ErrorSet => |error_set| self.match_type_info(T, error_set),
+            .ErrorSet => |error_set| self.match_info(error_set),
             else => match_error("ErrorSetMatch.match", "ErrorSet", T),
         };
     }

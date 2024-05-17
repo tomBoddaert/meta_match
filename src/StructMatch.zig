@@ -1,6 +1,6 @@
 //! Match a `Struct` type.
 //!
-//! https://ziglang.org/documentation/master/std/#A;std:builtin.Type.Struct
+//! https://ziglang.org/documentation/master/std/#std.builtin.Type.Struct
 
 const std = @import("std");
 const Type = std.builtin.Type;
@@ -79,7 +79,7 @@ test "meta_match.StructMatch" {
     try testing.expect(sm_empty.match(Point));
 
     const sm_packed_layout = Self{
-        .layout = .{ .options = &.{.Packed} },
+        .layout = .{ .options = &.{.@"packed"} },
     };
     try testing.expect(sm_packed_layout.match(PackedPoint));
     try testing.expect(!sm_packed_layout.match(Point));

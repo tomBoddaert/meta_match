@@ -1,6 +1,6 @@
 //! Match an `Opaque` type.
 //!
-//! https://ziglang.org/documentation/master/std/#A;std:builtin.Type.Opaque
+//! https://ziglang.org/documentation/master/std/##std.builtin.Type.Opaque
 
 const std = @import("std");
 const Opaque = std.builtin.Type.Opaque;

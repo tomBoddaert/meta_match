@@ -1,17 +1,14 @@
 .{
     .name = "meta_match",
-    .version = "0.11.0",
+    .version = "0.13.0-alpha.1",
 
-    .minimum_zig_version = "0.11.0",
+    .minimum_zig_version = "0.13.0",
 
     .dependencies = .{},
 
     .paths = .{
         "build.zig",
         "build.zig.zon",
-        ".gitignore",
-        ".ignore",
-        "README.md",
         "src",
     },
 }

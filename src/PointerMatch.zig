@@ -1,6 +1,6 @@
 //! Match a `Pointer` type.
 //!
-//! https://ziglang.org/documentation/master/std/#A;std:builtin.Type.Pointer
+//! https://ziglang.org/documentation/master/std/#std.builtin.Type.Pointer
 
 const std = @import("std");
 const builtin = std.builtin;

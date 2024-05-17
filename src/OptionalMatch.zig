@@ -1,6 +1,6 @@
 //! Match an `Optional` type.
 //!
-//! https://ziglang.org/documentation/master/std/#A;std:builtin.Type.Optional
+//! https://ziglang.org/documentation/master/std/#std.builtin.Type.Optional
 
 const std = @import("std");
 const Optional = std.builtin.Type.Optional;

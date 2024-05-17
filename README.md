@@ -4,15 +4,11 @@
 It is designed to assist with meta-programming of things like interfaces.
 
 ## Adding meta_match to your project
-In `build.zig.zon`, put this in the `dependencies` field:
-```zig
-.meta_match = .{
-    .url = "https://github.com/tomBoddaert/meta_match/archive/{commit}.tar.gz",
-    .hash = "{hash}",
-}
+Run
+```sh
+zig fetch --save https://github.com/tomBoddaert/meta_match/archive/{commit}.tar.gz
 ```
-Where `{commit}` is replaced with the commit (e.g. `4129996211edd30b25c23454520fd78b2a70394b`)
-and hash with the result of `zig fetch https://github.com/tomBoddaert/meta_match/archive/{commit}.tar.gz`.
+Where `{commit}` is replaced with the commit (e.g. `4129996211edd30b25c23454520fd78b2a70394b`).
 
 ## Example: go-like interfaces
 Interfaces in go are implemented implicitly, this means that any type that has the required
@@ -59,10 +55,10 @@ pub fn Deinit(comptime T: type) type {
         };
 
         /// The MetaMatch expression used to determine 'has_deinit'.
-        pub const MetaMatch = meta_match.TypeMatch{
-            .container = &.{
+        pub const MetaMatch = TypeMatch{
+            .container = &ContainerMatch{
                 // It must be a container with a 'deinit' declaration matching 'DeinitMatch' above
-                .decls = &.{.{ .name = "deinit", .type = DeinitMatch }},
+                .decls = &.{DeclarationMatch{ .name = "deinit", .type = DeinitMatch }},
             },
         };
 
@@ -96,3 +92,4 @@ test {
 
 In this example, if 'deinit' is called with a type that does not have a 'deinit' function, nothing happens but
 you could add a compile error, or you could run a default function.
+If 'deinit' is run with a type that does have a matching 'deinit' function, then the type's 'deinit' function is called.

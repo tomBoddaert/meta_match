@@ -1,6 +1,6 @@
 //! Match a `Fn` type.
 //!
-//! https://ziglang.org/documentation/master/std/#A;std:builtin.Type.Fn
+//! https://ziglang.org/documentation/master/std/#std.builtin.Type.Fn
 
 const std = @import("std");
 const builtin = std.builtin;
@@ -12,7 +12,6 @@ const ParamMatch = @import("ParamMatch.zig");
 const match_error = @import("utils.zig").match_error;
 
 calling_convention: OneOfMatch(builtin.CallingConvention) = .{ .any = {} },
-alignment: ?comptime_int = null,
 is_generic: ?bool = null,
 is_var_args: ?bool = null,
 // TODO: when this is made not optional in std, remove an optional
@@ -23,10 +22,6 @@ const Self = @This();
 
 pub fn match_info(comptime self: Self, comptime t: Fn) bool {
     if (!self.calling_convention.match(t.calling_convention)) return false;
-
-    if (self.alignment) |alignment| {
-        if (t.alignment != alignment) return false;
-    }
 
     if (self.is_generic) |is_generic| {
         if (t.is_generic != is_generic) return false;

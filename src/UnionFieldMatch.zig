@@ -1,6 +1,6 @@
 //! Match a field from a `Union` type.
 //!
-//! https://ziglang.org/documentation/master/std/#A;std:builtin.Type.UnionField
+//! https://ziglang.org/documentation/master/std/#std.builtin.Type.UnionField
 
 const std = @import("std");
 const UnionField = std.builtin.Type.UnionField;

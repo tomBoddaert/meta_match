@@ -1,6 +1,6 @@
 //! Match a param from a `Fn` type.
 //!
-//! https://ziglang.org/documentation/master/std/#A;std:builtin.Type.Fn.Param
+//! https://ziglang.org/documentation/master/std/#std.builtin.Type.Fn.Param
 
 const std = @import("std");
 const Param = std.builtin.Type.Fn.Param;

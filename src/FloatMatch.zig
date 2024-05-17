@@ -1,6 +1,6 @@
 //! Match a `Float` type.
 //!
-//! https://ziglang.org/documentation/master/std/#A;std:builtin.Type.Float
+//! https://ziglang.org/documentation/master/std/#std.builtin.Type.Float
 
 const std = @import("std");
 const Float = std.builtin.Type.Float;

@@ -1,6 +1,6 @@
 //! Match an `Enum` type.
 //!
-//! https://ziglang.org/documentation/master/std/#A;std:builtin.Type.Enum
+//! https://ziglang.org/documentation/master/std/#std.builtin.Type.Enum
 
 const std = @import("std");
 const Type = std.builtin.Type;

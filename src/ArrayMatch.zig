@@ -1,6 +1,6 @@
 //! Match an `Array` type.
 //!
-//! https://ziglang.org/documentation/master/std/#A;std:builtin.Type.AnyFrame
+//! https://ziglang.org/documentation/master/std/#std.builtin.Type.Array
 
 const std = @import("std");
 const Array = std.builtin.Type.Array;

@@ -1,6 +1,6 @@
 //! Match an `Int` type.
 //!
-//! https://ziglang.org/documentation/master/std/#A;std:builtin.Type.Int
+//! https://ziglang.org/documentation/master/std/#std.builtin.Type.Int
 
 const std = @import("std");
 const builtin = std.builtin;

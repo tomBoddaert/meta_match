@@ -1,6 +1,6 @@
 //! Match a `Frame` type.
 //!
-//! https://ziglang.org/documentation/master/std/#A;std:builtin.Type.Frame
+//! https://ziglang.org/documentation/master/std/#std.builtin.Type.Frame
 
 const std = @import("std");
 const Frame = std.builtin.Type.Frame;

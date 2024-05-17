@@ -1,6 +1,6 @@
 //! Match an `AnyFrame` type.
 //!
-//! https://ziglang.org/documentation/master/std/#A;std:builtin.Type.AnyFrame
+//! https://ziglang.org/documentation/master/std/#std.builtin.Type.AnyFrame
 
 const std = @import("std");
 const AnyFrame = std.builtin.Type.AnyFrame;

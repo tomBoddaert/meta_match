@@ -1,6 +1,6 @@
 //! Match a field from a `Struct` type.
 //!
-//! https://ziglang.org/documentation/master/std/#A;std:builtin.Type.StructField
+//! https://ziglang.org/documentation/master/std/#std.builtin.Type.StructField
 
 const std = @import("std");
 const StructField = std.builtin.Type.StructField;
